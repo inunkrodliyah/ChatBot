@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "question": "apa itu universitas airlangga",
+      "answer": "Universitas Airlangga adalah perguruan tinggi negeri yang berada di Surabaya."
+    },
+    {
+      "question": "dimana lokasi universitas airlangga",
+      "answer": "Universitas Airlangga memiliki Kampus A, B, dan C di Surabaya."
+    },
+    {
+      "question": "siapa rektor universitas airlangga",
+      "answer": "Silakan cek website resmi UNAIR untuk informasi rektor terbaru."
+    },
+    {
+      "question": "apa saja fakultas di unair",
+      "answer": "UNAIR memiliki berbagai fakultas seperti FK, FKG, FH, FEB, FST, FKM, FISIP, dan lainnya."
+    },
+    {
+      "question": "bagaimana cara pendaftaran mahasiswa baru",
+      "answer": "Pendaftaran dapat dilakukan melalui jalur SNBP, SNBT, dan Mandiri."
+    },
+    {
+      "question": "berapa biaya kuliah di unair",
+      "answer": "Biaya kuliah menggunakan sistem UKT yang berbeda pada setiap program studi."
+    },
+    {
+      "question": "dimana perpustakaan unair",
+      "answer": "Perpustakaan pusat berada di Kampus B Universitas Airlangga."
+    },
+    {
+      "question": "apa visi universitas airlangga",
+      "answer": "Menjadi universitas mandiri, inovatif, terkemuka di tingkat nasional dan internasional."
+    }
+  ]
+}
