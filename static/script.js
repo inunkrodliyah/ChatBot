@@ -6,19 +6,17 @@ async function sendMessage() {
 
     const chatBox = document.getElementById("chat-box");
 
-    // 1. Tambahkan pesan user ke UI
+    // Menambahkan pesan user ke UI
     chatBox.innerHTML += `
         <div class="message user-message">
             <div class="bubble">${escapeHtml(message)}</div>
         </div>
     `;
 
-    // Reset input dan scroll otomatis ke bawah
     input.value = "";
     chatBox.scrollTop = chatBox.scrollHeight;
 
     try {
-        // 2. Kirim data ke backend Flask
         const response = await fetch('/chat', {
             method: 'POST',
             headers: {
@@ -27,11 +25,11 @@ async function sendMessage() {
             body: JSON.stringify({ message: message })
         });
 
-        if (!response.ok) throw new Error("Gagal mengambil data dari server");
+        if (!response.ok) throw new Error("Gagal mengambil data");
 
         const data = await response.json();
 
-        // 3. Tambahkan respons bot ke UI
+        // Menambahkan respons bot ke UI
         chatBox.innerHTML += `
             <div class="message bot-message">
                 <div class="bubble">${data.response}</div>
@@ -40,16 +38,14 @@ async function sendMessage() {
     } catch (error) {
         chatBox.innerHTML += `
             <div class="message bot-message">
-                <div class="bubble" style="color: red;">Terjadi masalah jaringan atau server Sastrawi belum siap.</div>
+                <div class="bubble" style="color: red;">Terjadi masalah jaringan atau server belum siap.</div>
             </div>
         `;
     }
 
-    // Scroll akhir setelah bot merespons
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Menghindari celah XSS dari input user langsung ke HTML innerHTML
 function escapeHtml(text) {
     return text
         .replace(/&/g, "&amp;")
@@ -59,7 +55,6 @@ function escapeHtml(text) {
         .replace(/'/g, "&#039;");
 }
 
-// Deteksi tombol 'Enter' pada input teks agar bisa langsung terkirim
 document.getElementById("user-input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();

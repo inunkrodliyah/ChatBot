@@ -1,11 +1,21 @@
+/* style.css */
+
 :root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
     --primary-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
-    --body-bg: #f4f6f9;
+    --body-bg: #f5f7fb;
     --chat-bg: #ffffff;
+    --sidebar-bg: #112240;
     --text-dark: #2c3e50;
-    --text-muted: #7f8c8d;
+    --text-light: #ffffff;
     --user-bubble: #2a5298;
-    --bot-bubble: #f0f2f5;
+    --bot-bubble: #ffffff;
+    --border-color: #eef2f5;
+    
+    /* Ukuran Komponen Komponen */
+    --header-height: 80px;
+    --input-area-height: 80px;
 }
 
 * {
@@ -17,58 +27,140 @@
 body {
     font-family: 'Inter', sans-serif;
     background: var(--body-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--text-dark);
     height: 100vh;
-}
-
-.chat-container {
-    width: 480px;
-    height: 85vh;
-    background: var(--chat-bg);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
+    width: 100vw;
     overflow: hidden;
 }
 
-/* Header */
+/* Tata Letak Utama Berdampingan */
+.app-layout {
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+/* Panel Samping (Hanya Desktop) */
+.sidebar {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 30px 20px;
+    position: relative;
+}
+
+.brand {
+    margin-bottom: 40px;
+}
+
+.brand i {
+    font-size: 26px;
+    color: #00bcd4;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.brand h2 {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.info-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #00bcd4;
+}
+
+.info-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.shortcut-list h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin: 0 5px 8px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tag:hover {
+    background: var(--secondary-color);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+/* Area Chat Box Utama (Lebar Penuh Kanan) */
+.chat-container {
+    margin-left: 300px; /* Memberi ruang untuk sidebar */
+    height: 100vh;
+    background: #f8fafc;
+    position: relative;
+}
+
+/* 1. Bagian Header */
 .chat-header {
-    background: var(--primary-gradient);
-    color: white;
-    padding: 20px;
+    height: var(--header-height);
+    background: #ffffff;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: block;
 }
 
 .header-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    padding-top: 18px;
 }
 
 .avatar {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.2);
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #f0f2f5;
+    color: var(--primary-color);
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 18px;
+    margin-right: 15px;
 }
 
-.header-info h3 {
+.header-text h3 {
     font-size: 16px;
     font-weight: 600;
 }
 
-.header-info p {
+.header-text p {
     font-size: 12px;
-    opacity: 0.9;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    color: #2ecc71;
+    font-weight: 500;
+    margin-top: 2px;
 }
 
 .status-dot {
@@ -77,96 +169,130 @@ body {
     background: #2ecc71;
     border-radius: 50%;
     display: inline-block;
+    margin-right: 3px;
 }
 
-/* Chat Box Area */
+/* 2. Bagian Isi Pesan Chat (Tinggi otomatis sisa layar) */
 .chat-box {
-    flex: 1;
-    padding: 20px;
+    height: calc(100vh - var(--header-height) - var(--input-area-height));
+    padding: 30px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: #fafafa;
+    display: block;
 }
 
 .message {
-    display: flex;
-    max-width: 80%;
+    display: block;
+    margin-bottom: 15px;
+    clear: both;
 }
 
 .bubble {
-    padding: 12px 16px;
-    border-radius: 18px;
+    padding: 14px 20px;
+    border-radius: 16px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    max-width: 70%;
     word-wrap: break-word;
 }
 
-.user-message {
-    align-self: flex-end;
-}
-
 .user-message .bubble {
+    float: right;
     background: var(--user-bubble);
     color: white;
     border-bottom-right-radius: 4px;
 }
 
-.bot-message {
-    align-self: flex-start;
-}
-
 .bot-message .bubble {
+    float: left;
     background: var(--bot-bubble);
     color: var(--text-dark);
     border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    border: 1px solid var(--border-color);
 }
 
-/* Input Area */
+/* 3. Bagian Kontainer Input Bawah */
 .input-area {
-    padding: 15px;
-    background: white;
-    border-top: 1px solid #eee;
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    height: var(--input-area-height);
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+    padding: 16px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.input-wrapper {
+    width: 100%;
+    position: relative;
+    display: block;
 }
 
 input {
-    flex: 1;
-    padding: 14px 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 25px;
+    width: 100%;
+    padding: 14px 65px 14px 20px; /* Memberi padding kanan agar teks tidak menumpuk di bawah tombol */
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
     outline: none;
     font-size: 14px;
-    transition: border 0.2s;
+    background: #f8fafc;
+    transition: all 0.2s;
 }
 
 input:focus {
-    border-color: #2a5298;
+    background: #ffffff;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
 }
 
+/* Tombol Kirim melayang pas di dalam sisi kanan input */
 button {
-    width: 48px;
-    height: 48px;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    width: 40px;
+    height: 40px;
     background: var(--primary-gradient);
     border: none;
     color: white;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    transition: transform 0.2s, opacity 0.2s;
+    font-size: 14px;
+    transition: transform 0.2s;
 }
 
 button:hover {
-    opacity: 0.9;
     transform: scale(1.05);
 }
 
-button:active {
-    transform: scale(0.95);
+/* ========================================================= */
+/* --- MODE MOBILE/HANDPHONE (Responsive Breakpoint) ---    */
+/* ========================================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Sembunyikan panel kiri di HP */
+    }
+    
+    .chat-container {
+        margin-left: 0; /* Chat mengambil lebar penuh layar HP */
+        width: 100%;
+    }
+
+    .chat-header {
+        padding: 0 20px;
+    }
+
+    .chat-box {
+        padding: 20px 15px;
+    }
+
+    .bubble {
+        max-width: 85%;
+        font-size: 13.5px;
+    }
+
+    .input-area {
+        padding: 16px 15px;
+    }
 }

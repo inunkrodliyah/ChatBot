@@ -4,44 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TanyaKampus - Chatbot Akademik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<div class="chat-container">
-    <div class="chat-header">
-        <div class="header-info">
-            <div class="avatar">
-                <i class="fa-solid fa-graduation-cap"></i>
+<div class="app-layout">
+    <div class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>TanyaKampus</h2>
+        </div>
+        <div class="sidebar-content">
+            <div class="info-card">
+                <h3><i class="fa-solid fa-circle-info"></i> Panduan Fitur</h3>
+                <p>TanyaKampus adalah pusat bantuan bot pintar untuk menjawab pertanyaan seputar istilah akademik perkuliahan secara instan.</p>
             </div>
-            <div>
-                <h3>TanyaKampus</h3>
-                <p><span class="status-dot"></span> Online • Asisten Akademik</p>
+            <div class="shortcut-list">
+                <h4>Topik Populer:</h4>
+                <span class="tag">#KRS</span>
+                <span class="tag">#SKS</span>
+                <span class="tag">#KHS</span>
+                <span class="tag">#IPK</span>
+                <span class="tag">#Cumlaude</span>
+                <span class="tag">#KKN</span>
             </div>
+        </div>
+        <div class="sidebar-footer">
+            <p>v1.0 • Sistem Informasi Akademik</p>
         </div>
     </div>
 
-    <div id="chat-box" class="chat-box">
-        <div class="message bot-message">
-            <div class="bubble">
-                Selamat datang di <strong>TanyaKampus</strong>! 👋<br>
-                Saya siap membantu menjawab kebingunganmu mengenai istilah perkuliahan umum seperti KRS, KHS, SKS, atau IPK. Silakan tanyakan apa saja!
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-info">
+                <div class="avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="header-text">
+                    <h3>Asisten TanyaKampus</h3>
+                    <p><span class="status-dot"></span> Online • Siap Membantu</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="input-area">
-        <input 
-            type="text" 
-            id="user-input" 
-            placeholder="Ketik pertanyaanmu di sini (e.g., apa itu KRS?)..."
-            autocomplete="off"
-        >
-        <button id="send-btn" onclick="sendMessage()">
-            <i class="fa-solid fa-paper-plane"></i>
-        </button>
+        <div id="chat-box" class="chat-box">
+            <div class="message bot-message">
+                <div class="bubble">
+                    Selamat datang di <strong>TanyaKampus</strong>! 👋<br>
+                    Saya siap membantu menjawab kebingunganmu mengenai istilah perkuliahan umum seperti KRS, KHS, SKS, atau IPK. Silakan ketik pertanyaanmu di bawah!
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Ketik pertanyaanmu di sini (contoh: apa itu KRS?)..."
+                    autocomplete="off"
+                >
+                <button id="send-btn" onclick="sendMessage()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 
