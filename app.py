@@ -14,7 +14,7 @@ stemmer_factory = StemmerFactory()
 stemmer = stemmer_factory.create_stemmer()
 
 stopword_factory = StopWordRemoverFactory()
-stopword_remover = stopword_factory.create_stop_word_remover() 
+stopword_remover = stopword_factory.create_stop_word_remover() # Perbaikan typo fungsi Sastrawi di sini
 
 # 2. Load Dataset Intents
 with open('intents.json', 'r', encoding='utf-8') as file:
