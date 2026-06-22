@@ -43,7 +43,7 @@
     {
       "tag": "cuti_kuliah",
       "patterns": ["bagaimana cara cuti kuliah", "syarat cuti kuliah", "apa itu cuti akademik", "maksud cuti kuliah", "berhenti kuliah sementara"],
-      "responses": ["Cuti kuliah atau cuti akademik adalah masa istirahat sah di mana mahasiswa tidak mengikuti kegiatan perkuliahan untuk semester tertentu dengan izin resmi dari kampus, sehingga statusnya tidak dianggap Drop Out (DO)."]
+      "responses": ["Cuti kuliah or cuti akademik adalah masa istirahat sah di mana mahasiswa tidak mengikuti kegiatan perkuliahan untuk semester tertentu dengan izin resmi dari kampus, sehingga statusnya tidak dianggap Drop Out (DO)."]
     },
     {
       "tag": "mbkm",
@@ -94,6 +94,174 @@
       "tag": "pkl",
       "patterns": ["apa itu pkl", "internship itu apa", "magang kuliah maksudnya", "kerja praktek", "kp itu apa"],
       "responses": ["PKL (Praktik Kerja Lapangan) atau Kerja Praktik (KP) adalah program magang wajib di mana mahasiswa bekerja langsung di sebuah perusahaan atau instansi untuk mempraktikkan ilmu perkuliahan di dunia kerja nyata."]
+    },
+    {
+      "tag": "unair_umum",
+      "patterns": [
+        "unair",
+        "apa itu unair",
+        "universitas airlangga",
+        "tentang unair"
+      ],
+      "responses": [
+        "Universitas Airlangga (UNAIR) adalah salah satu perguruan tinggi negeri terkemuka di Indonesia yang terletak di Surabaya. Kampus ini memiliki motto 'Excellence with Morality'. Ada yang ingin kamu tanyakan spesifik mengenai UNAIR seperti jalur PMB, beasiswa, fakultas, atau lokasi kampusnya?"
+      ]
+    },
+    {
+      "tag": "unair_pmb_jalur",
+      "patterns": [
+        "apa saja jalur penerimaan mahasiswa baru yang dibuka oleh unair selain snbp dan snbt",
+        "jalur mandiri unair apa saja",
+        "pendaftaran unair selain snbp snbt",
+        "pmb unair"
+      ],
+      "responses": [
+        "Selain SNBP dan SNBT, Universitas Airlangga (UNAIR) membuka Jalur Mandiri yang terdiri dari beberapa jenis, antara lain: Mandiri Prestasi, Mandiri Utbk Plus (menggunakan nilai UTBK-SNBT), Mandiri Reguler (Ujian Tulis), dan seleksi khusus Kelas Internasional (IUP)."
+      ]
+    },
+    {
+      "tag": "unair_pmb_skor",
+      "patterns": [
+        "berapa rata-rata nilai rapor atau skor utbk yang aman untuk masuk ke program studi x di unair",
+        "nilai aman masuk unair",
+        "skor utbk masuk jurusan unair",
+        "berapa nilai rapor untuk lolos unair"
+      ],
+      "responses": [
+        "Nilai aman rapor atau skor UTBK bervariasi setiap tahun tergantung keketatan program studi (prodi). Prodi rumpun kesehatan seperti Kedokteran dan Farmasi, serta rumpun soshum seperti Manajemen dan Hukum biasanya membutuhkan skor yang sangat tinggi. Anda dapat memantau daya tampung dan keketatan resmi di situs PPMB UNAIR."
+      ]
+    },
+    {
+      "tag": "unair_pmb_iup",
+      "patterns": [
+        "apa saja persyaratan dan tahapan tes untuk mendaftar kelas internasional iup di unair",
+        "cara daftar kelas internasional unair",
+        "syarat iup unair",
+        "tes iup unair apa saja"
+      ],
+      "responses": [
+        "Persyaratan utama Kelas Internasional (IUP) UNAIR meliputi sertifikat kemampuan bahasa Inggris (seperti TOEFL/IELTS) dan nilai rapor/ijazah. Tahapan tesnya biasanya terdiri dari tes kemampuan akademik (Airlangga Academic Test) serta wawancara kelayakan (Interview Test) dalam bahasa Inggris."
+      ]
+    },
+    {
+      "tag": "unair_jumlah_fakultas",
+      "patterns": [
+        "berapa jumlah fakultas di unair",
+        "ada berapa fakultas di unair",
+        "daftar fakultas unair",
+        "unair punya berapa fakultas"
+      ],
+      "responses": [
+        "Universitas Airlangga (UNAIR) saat ini memiliki **15 Fakultas, 1 Sekolah Pascasarjana, dan 1 Sekolah Ilmu Kesehatan dan Ilmu Alam (SIKIA) Banyuwangi**. Fakultas tersebut tersebar di Kampus A, B, dan C yang menaungi rumpun Kesehatan, Sains-Teknologi, serta Sosial Humaniora."
+      ]
+    },
+    {
+      "tag": "unair_prodi_unggulan",
+      "patterns": [
+        "apa program studi unggulan yang paling banyak diminati di unair",
+        "jurusan favorit di unair",
+        "prodi paling ketat unair",
+        "jurusan unggulan unair"
+      ],
+      "responses": [
+        "Program studi unggulan dan paling diminati di UNAIR antara lain Kedokteran, Kedokteran Gigi, Farmasi, dan Keperawatan untuk rumpun Saintek. Sedangkan untuk rumpun Soshum meliputi Psikologi, Hukum, Manajemen, Akuntansi, dan Ilmu Komunikasi."
+      ]
+    },
+    {
+      "tag": "beasiswa",
+      "patterns": [
+        "apakah ada program kip kuliah atau beasiswa lain untuk mahasiswa unair",
+        "beasiswa di unair apa saja",
+        "cara daftar kip kuliah unair",
+        "beasiswa unair"
+      ],
+      "responses": [
+        "Ya, UNAIR menyediakan kuota untuk program KIP Kuliah (KIP-K). Selain itu, terdapat berbagai beasiswa lain seperti Beasiswa Bank Indonesia, Beasiswa Djarum Beasiswa Plus, Beasiswa Kaltim Cemerlang, Beasiswa dari Pemkot Surabaya, serta bantuan internal UKT dari pihak universitas."
+      ]
+    },
+    {
+      "tag": "unair_biaya_ukt",
+      "patterns": [
+        "bagaimana sistem pembayaran uang kuliah tunggal ukt di unair dan apakah bisa dicicil",
+        "apakah ukt unair bisa dicicil",
+        "sistem pembayaran ukt unair",
+        "cicilan ukt unair"
+      ],
+      "responses": [
+        "Sistem UKT di UNAIR disesuaikan dengan kemampuan ekonomi orang tua wali mahasiswa yang dibagi menjadi beberapa kelompok (golongan). Bagi mahasiswa yang mengalami kendala finansial, UNAIR menyediakan kebijakan pengajuan keringanan, penundaan, atau pembayaran UKT secara mengangsur (dicicil) sesuai ketentuan rektorat."
+      ]
+    },
+    {
+      "tag": "unair_kehidupan_asrama",
+      "patterns": [
+        "bagaimana fasilitas asrama mahasiswa student housing yang disediakan oleh pihak kampus",
+        "asrama unair",
+        "student housing unair",
+        "fasilitas asrama unair"
+      ],
+      "responses": [
+        "UNAIR menyediakan fasilitas Asrama Mahasiswa (Student Housing), seperti Asrama Putri di Kampus C dan Asrama Putra. Fasilitasnya cukup lengkap meliputi kamar tidur (sharing), kamar mandi, koneksi Wi-Fi, ruang belajar bersama, kantin, keamanan 24 jam, dan dekat dengan area perkuliahan."
+      ]
+    },
+    {
+      "tag": "unair_kehidupan_ukm",
+      "patterns": [
+        "apa saja unit kegiatan mahasiswa ukm populer yang bisa diikuti untuk mengembangkan minat dan bakat",
+        "ukm di unair",
+        "organisasi mahasiswa unair",
+        "ukm populer unair"
+      ],
+      "responses": [
+        "UNAIR memiliki banyak UKM populer di berbagai bidang, seperti Bidang Khusus (Resimen Mahasiswa, Pramuka, KSR-PMI), Bidang Olahraga (Sepak Bola, Basket, Panahan, Badminton), Bidang Seni (Paduan Suara PSM, Tari, Teater), dan Bidang Kerohanian (UK3, UKM Kerohanian Islam)."
+      ]
+    },
+    {
+      "tag": "unair_lokasi_kampus",
+      "patterns": [
+        "dimana saja lokasi kampus unair",
+        "perbedaan kampus a b dan c unair",
+        "fakultas di kampus a apa saja",
+        "lokasi gedung rektorat unair"
+      ],
+      "responses": [
+        "UNAIR memiliki 3 kampus utama di Surabaya: \n- **Kampus A** (Jl. Mayjen Prof. Dr. Moestopo) untuk rumpun kesehatan (Fakultas Kedokteran dan Kedokteran Gigi).\n- **Kampus B** (Jl. Airlangga) untuk rumpun Soshum (FEB, FH, FISIP, FIB, Psikologi, Vokasi).\n- **Kampus C** (Mulyorejo) sebagai pusat Rektorat dan rumpun Sains, Teknologi, serta rumpun kesehatan lainnya (FST, FTMM, Farmasi, Keperawatan, Kesehatan Masyarakat, Kedokteran Hewan, Perikanan dan Kelautan)."
+      ]
+    },
+    {
+      "tag": "unair_cyber_campus",
+      "patterns": [
+        "apa itu cyber campus unair",
+        "web uacc unair",
+        "fungsi cyber campus",
+        "cara isi krs di unair"
+      ],
+      "responses": [
+        "Cyber Campus Universitas Airlangga (UACC) adalah portal sistem informasi akademik digital terintegrasi utama bagi mahasiswa UNAIR. Portal ini digunakan untuk pengisian KRS secara online, melihat nilai KHS, mengecek riwayat pembayaran UKT, transkrip akademik, hingga pendaftaran herregistrasi."
+      ]
+    },
+    {
+      "tag": "unair_elita",
+      "patterns": [
+        "apa itu elita unair",
+        "e-learning universitas airlangga",
+        "platform kuliah online unair",
+        "web elearning unair"
+      ],
+      "responses": [
+        "ELITA (E-Learning Universitas Airlangga) adalah platform manajemen pembelajaran digital resmi yang digunakan di UNAIR. Mahasiswa memanfaatkan ELITA untuk mengakses materi perkuliahan, mengumpulkan tugas harian, mengikuti kuis interaktif, presensi kelas, dan berinteraksi secara online dengan dosen."
+      ]
+    },
+    {
+      "tag": "unair_amerta",
+      "patterns": [
+        "apa itu amerta unair",
+        "ospek unair namanya apa",
+        "pengenalan kampus mahasiswa baru unair",
+        "ksatria airlangga"
+      ],
+      "responses": [
+        "AMERTA (Angkatan Muda Ksatria Airlangga) adalah nama resmi rangkaian kegiatan pengenalan kehidupan kampus bagi mahasiswa baru (ospek) di tingkat Universitas Airlangga. Istilah 'Ksatria Airlangga' sendiri merupakan sebutan bangga untuk mahasiswa UNAIR."
+      ]
     }
   ]
 }

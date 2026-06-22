@@ -13,7 +13,7 @@
     --bot-bubble: #ffffff;
     --border-color: #eef2f5;
     
-    /* Ukuran Komponen Komponen */
+    /* Ukuran Komponen */
     --header-height: 80px;
     --input-area-height: 80px;
 }
@@ -33,14 +33,14 @@ body {
     overflow: hidden;
 }
 
-/* Tata Letak Utama Berdampingan */
+/* Layout Utama */
 .app-layout {
     width: 100%;
     height: 100vh;
     display: block;
 }
 
-/* Panel Samping (Hanya Desktop) */
+/* Panel Samping (Sidebar) */
 .sidebar {
     float: left;
     width: 300px;
@@ -49,10 +49,11 @@ body {
     color: var(--text-light);
     padding: 30px 20px;
     position: relative;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
 }
 
 .brand {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .brand i {
@@ -64,49 +65,87 @@ body {
 
 .brand h2 {
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     vertical-align: middle;
+    letter-spacing: 0.5px;
 }
 
-.info-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 25px;
+/* Desain Komponen Menu Baru di Sidebar */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 30px;
 }
 
-.info-card h3 {
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    color: #a0aec0;
+    text-decoration: none;
     font-size: 14px;
-    margin-bottom: 8px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.05);
     color: #00bcd4;
 }
 
-.info-card p {
+/* Info dan Tag di Sidebar */
+.info-card {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.info-card h3 {
     font-size: 13px;
+    margin-bottom: 8px;
+    color: #00bcd4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-card p {
+    font-size: 12.5px;
     line-height: 1.6;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .shortcut-list h4 {
     font-size: 13px;
     margin-bottom: 10px;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .tag {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     padding: 5px 12px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 11.5px;
     margin: 0 5px 8px 0;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .tag:hover {
     background: var(--secondary-color);
+    color: white;
 }
 
 .sidebar-footer {
@@ -114,24 +153,23 @@ body {
     bottom: 20px;
     left: 20px;
     font-size: 11px;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
-/* Area Chat Box Utama (Lebar Penuh Kanan) */
+/* Area Kotak Chat Utama */
 .chat-container {
-    margin-left: 300px; /* Memberi ruang untuk sidebar */
+    margin-left: 300px;
     height: 100vh;
     background: #f8fafc;
     position: relative;
 }
 
-/* 1. Bagian Header */
+/* Header Atas */
 .chat-header {
     height: var(--header-height);
     background: #ffffff;
     padding: 0 30px;
     border-bottom: 1px solid var(--border-color);
-    display: block;
 }
 
 .header-info {
@@ -169,10 +207,10 @@ body {
     background: #2ecc71;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 3px;
+    margin-right: 4px;
 }
 
-/* 2. Bagian Isi Pesan Chat (Tinggi otomatis sisa layar) */
+/* Area Scroll Chat Box */
 .chat-box {
     height: calc(100vh - var(--header-height) - var(--input-area-height));
     padding: 30px;
@@ -211,7 +249,7 @@ body {
     border: 1px solid var(--border-color);
 }
 
-/* 3. Bagian Kontainer Input Bawah */
+/* Input Area Bawah */
 .input-area {
     height: var(--input-area-height);
     background: #ffffff;
@@ -226,12 +264,11 @@ body {
 .input-wrapper {
     width: 100%;
     position: relative;
-    display: block;
 }
 
 input {
     width: 100%;
-    padding: 14px 65px 14px 20px; /* Memberi padding kanan agar teks tidak menumpuk di bawah tombol */
+    padding: 14px 65px 14px 20px;
     border: 1px solid #e2e8f0;
     border-radius: 30px;
     outline: none;
@@ -246,7 +283,6 @@ input:focus {
     box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
 }
 
-/* Tombol Kirim melayang pas di dalam sisi kanan input */
 button {
     position: absolute;
     right: 5px;
@@ -266,16 +302,16 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* ========================================================= */
-/* --- MODE MOBILE/HANDPHONE (Responsive Breakpoint) ---    */
-/* ========================================================= */
+/* ========================================== */
+/* --- RESPONSIVE MOBILE CONFIGURATION ---    */
+/* ========================================== */
 @media (max-width: 768px) {
     .sidebar {
-        display: none; /* Sembunyikan panel kiri di HP */
+        display: none; /* Menyembunyikan sidebar di layar HP */
     }
     
     .chat-container {
-        margin-left: 0; /* Chat mengambil lebar penuh layar HP */
+        margin-left: 0;
         width: 100%;
     }
 

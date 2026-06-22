@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TanyaKampus - Chatbot Akademik</title>
+    <title>TanyaUnair - Chatbot Akademik Universitas Airlangga</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
@@ -14,25 +14,37 @@
     <div class="sidebar">
         <div class="brand">
             <i class="fa-solid fa-graduation-cap"></i>
-            <h2>TanyaKampus</h2>
+            <h2>TanyaUnair</h2>
         </div>
+        
+        <div class="sidebar-menu">
+            <a href="https://ppmb.unair.ac.id" target="_blank" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>PPMB</span>
+            </a>
+            <a href="https://pusatbahasa.unair.ac.id/unairs-elpt/" target="_blank" class="menu-item">
+                <i class="fa-solid fa-language"></i>
+                <span>ELPT</span>
+            </a>
+        </div>
+
         <div class="sidebar-content">
             <div class="info-card">
                 <h3><i class="fa-solid fa-circle-info"></i> Panduan Fitur</h3>
-                <p>TanyaKampus adalah pusat bantuan bot pintar untuk menjawab pertanyaan seputar istilah akademik perkuliahan secara instan.</p>
+                <p>TanyaUnair adalah pusat bantuan bot pintar untuk menjawab pertanyaan seputar istilah akademik perkuliahan dan informasi umum di Universitas Airlangga secara instan.</p>
             </div>
             <div class="shortcut-list">
                 <h4>Topik Populer:</h4>
                 <span class="tag">#KRS</span>
                 <span class="tag">#SKS</span>
-                <span class="tag">#KHS</span>
-                <span class="tag">#IPK</span>
-                <span class="tag">#Cumlaude</span>
-                <span class="tag">#KKN</span>
+                <span class="tag">#UKT</span>
+                <span class="tag">#Beasiswa</span>
+                <span class="tag">#CyberCampus</span>
+                <span class="tag">#AMERTA</span>
             </div>
         </div>
         <div class="sidebar-footer">
-            <p>v1.0 • Sistem Informasi Akademik</p>
+            <p>v1.1 • Universitas Airlangga</p>
         </div>
     </div>
 
@@ -43,7 +55,7 @@
                     <i class="fa-solid fa-robot"></i>
                 </div>
                 <div class="header-text">
-                    <h3>Asisten TanyaKampus</h3>
+                    <h3>Asisten TanyaUnair</h3>
                     <p><span class="status-dot"></span> Online • Siap Membantu</p>
                 </div>
             </div>
@@ -52,8 +64,8 @@
         <div id="chat-box" class="chat-box">
             <div class="message bot-message">
                 <div class="bubble">
-                    Selamat datang di <strong>TanyaKampus</strong>! 👋<br>
-                    Saya siap membantu menjawab kebingunganmu mengenai istilah perkuliahan umum seperti KRS, KHS, SKS, atau IPK. Silakan ketik pertanyaanmu di bawah!
+                    Selamat datang di <strong>TanyaUnair</strong>! 👋<br>
+                    Saya siap membantu menjawab kebingunganmu mengenai informasi kampus Universitas Airlangga, mulai dari jalur masuk PMB, beasiswa, fakultas, hingga istilah perkuliahan seperti KRS, KHS, SKS, atau IPK. Silakan ketik pertanyaanmu di bawah!
                 </div>
             </div>
         </div>
@@ -63,7 +75,7 @@
                 <input 
                     type="text" 
                     id="user-input" 
-                    placeholder="Ketik pertanyaanmu di sini (contoh: apa itu KRS?)..."
+                    placeholder="Ketik pertanyaanmu di sini (contoh: apa itu cyber campus?)..."
                     autocomplete="off"
                 >
                 <button id="send-btn" onclick="sendMessage()">
