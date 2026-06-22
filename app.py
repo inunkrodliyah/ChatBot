@@ -14,7 +14,7 @@ stemmer_factory = StemmerFactory()
 stemmer = stemmer_factory.create_stemmer()
 
 stopword_factory = StopWordRemoverFactory()
-stopword_remover = stopword_factory.create_stop_word_remover() # Perbaikan typo fungsi Sastrawi di sini
+stopword_remover = stopword_factory.create_stop_word_remover()
 
 # 2. Load Dataset Intents
 with open('intents.json', 'r', encoding='utf-8') as file:
@@ -65,10 +65,9 @@ def chatbot_response(user_input):
     # Batas ambang kecocokan (Threshold)
     if score > 0.25:
         matched_intent = pattern_to_intent[best_match_idx]
-        # Mengambil salah satu jawaban acak dari list responses yang sesuai
         return random.choice(matched_intent['responses'])
     else:
-        return "Maaf, saya belum memahami pertanyaan tersebut. Coba tanyakan istilah lain seperti KRS, KHS, SKS, atau IPK."
+        return "Maaf, saya belum memahami pertanyaan tersebut. Coba tanyakan istilah lain seputar kampus UNAIR seperti Jalur PMB, ELPT, Cyber Campus, atau KRS."
 
 @app.route('/')
 def home():
@@ -80,5 +79,8 @@ def chat():
     response = chatbot_response(message)
     return jsonify({'response': response})
 
+# Baris penyesuaian port dinamis untuk lokal
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)

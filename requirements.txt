@@ -1,5 +1,4 @@
 Flask
-nltk
 scikit-learn
 numpy
 PySastrawi
