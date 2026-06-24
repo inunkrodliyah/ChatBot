@@ -61,3 +61,23 @@ document.getElementById("user-input").addEventListener("keypress", function(even
         sendMessage();
     }
 });
+
+
+// ============================================
+// LOGIKA SLIDE SIDEBAR MENU (HAMBURGER MENU)
+// ============================================
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+// Fungsi membuka atau menutup sidebar lewat tombol hamburger
+menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    sidebarOverlay.classList.toggle('active');
+});
+
+// Fungsi menutup kembali laci menu ketika pengguna mengklik area luar (overlay)
+sidebarOverlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+});
