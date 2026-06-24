@@ -1,6 +1,7 @@
-async function sendMessage() {
+async function sendMessage(customMessage = null) {
     const input = document.getElementById("user-input");
-    const message = input.value.trim();
+    // Jika ada parameter customMessage (dari chip), pakai itu. Jika tidak, ambil dari input teks.
+    const message = customMessage ? customMessage.trim() : input.value.trim();
 
     if (message === "") return;
 
@@ -13,7 +14,10 @@ async function sendMessage() {
         </div>
     `;
 
-    input.value = "";
+    // Kosongkan input bar jika pengiriman manual dari keyboard
+    if (!customMessage) {
+        input.value = "";
+    }
     chatBox.scrollTop = chatBox.scrollHeight;
 
     try {
@@ -46,6 +50,11 @@ async function sendMessage() {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+// Fungsi Trigger Saat Salah Satu Chip Diklik
+function sendSuggestion(text) {
+    sendMessage(text);
+}
+
 function escapeHtml(text) {
     return text
         .replace(/&/g, "&amp;")
@@ -62,21 +71,16 @@ document.getElementById("user-input").addEventListener("keypress", function(even
     }
 });
 
-
-// ============================================
 // LOGIKA SLIDE SIDEBAR MENU (HAMBURGER MENU)
-// ============================================
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 const sidebarOverlay = document.getElementById('sidebar-overlay');
 
-// Fungsi membuka atau menutup sidebar lewat tombol hamburger
 menuToggle.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     sidebarOverlay.classList.toggle('active');
 });
 
-// Fungsi menutup kembali laci menu ketika pengguna mengklik area luar (overlay)
 sidebarOverlay.addEventListener('click', () => {
     sidebar.classList.remove('active');
     sidebarOverlay.classList.remove('active');

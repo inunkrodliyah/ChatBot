@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TanyaUnair - Chatbot Academic Universitas Airlangga</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <title>TanyaUnair - Chatbot Akademik Universitas Airlangga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -31,6 +31,14 @@
             <a href="https://pusatbahasa.unair.ac.id/unairs-elpt/" target="_blank" class="menu-item">
                 <i class="fa-solid fa-language"></i>
                 <span>ELPT</span>
+            </a>
+            <a href="https://mahasiswa.unair.ac.id/" target="_blank" class="menu-item">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Cyber Campus</span>
+            </a>
+            <a href="https://hebat.elearning.unair.ac.id/hebat-v2/" target="_blank" class="menu-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>HEBAT UNAIR</span>
             </a>
         </div>
 
@@ -71,17 +79,25 @@
             <div class="message bot-message">
                 <div class="bubble">
                     Selamat datang di <strong>TanyaUnair</strong>! 👋<br>
-                    Saya siap membantu menjawab kebingunganmu mengenai informasi kampus Universitas Airlangga, mulai dari jalur masuk PMB, beasiswa, fakultas, hingga istilah perkuliahan seperti KRS, KHS, SKS, atau IPK. Silakan ketik pertanyaanmu di bawah!
+                    Saya siap membantu menjawab kebingunganmu mengenai informasi kampus Universitas Airlangga, mulai dari jalur masuk PMB, beasiswa, fakultas, hingga istilah perkuliahan seperti KRS, KHS, SKS, atau IPK. Silakan ketik atau pilih pertanyaan di bawah!
                 </div>
             </div>
         </div>
 
         <div class="input-area">
+            <div class="suggestion-container">
+                <button class="chip" onclick="sendSuggestion('Apa itu KRS?')">Apa itu KRS?</button>
+                <button class="chip" onclick="sendSuggestion('Jalur mandiri Unair apa saja')">Jalur Mandiri</button>
+                <button class="chip" onclick="sendSuggestion('Apakah UKT Unair bisa dicicil')">Cicilan UKT</button>
+                <button class="chip" onclick="sendSuggestion('Apa itu cyber campus unair')">Cyber Campus</button>
+                <button class="chip" onclick="sendSuggestion('Syarat lulus predikat cumlaude')">Syarat Cumlaude</button>
+            </div>
+
             <div class="input-wrapper">
                 <input 
                     type="text" 
                     id="user-input" 
-                    placeholder="Ketik pertanyaanmu di sini (contoh: apa itu cyber campus?)..."
+                    placeholder="Ketik pertanyaanmu di sini..."
                     autocomplete="off"
                 >
                 <button id="send-btn" onclick="sendMessage()">

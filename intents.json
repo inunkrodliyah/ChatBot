@@ -2,12 +2,12 @@
   "intents": [
     {
       "tag": "salam",
-      "patterns": ["halo", "hai", "selamat pagi", "selamat siang", "permisi", "assalamualaikum", "p"],
+      "patterns": ["halo", "hai", "selamat pagi", "selamat siang", "permisi", "assalamualaikum"],
       "responses": ["Halo! Ada yang bisa saya bantu seputar istilah perkuliahan?", "Hai! Saya TanyaKampus. Apa yang ingin kamu tanyakan hari ini mengenai akademik?"]
     },
     {
       "tag": "krs",
-      "patterns": ["apa itu krs", "krs singkatan dari apa", "maksudnya krs", "cara isi krs", "krsan itu apa", "penjelasan krs"],
+      "patterns": ["apa itu krs", "krs singkatan dari apa", "maksudnya krs", "bagaimana cara isi krs", "krsan itu apa", "penjelasan krs"],
       "responses": ["KRS adalah Kartu Rencana Studi. Ini adalah daftar mata kuliah yang akan kamu ambil dalam satu semester ke depan. Biasanya diisi secara online sebelum perkuliahan dimulai."]
     },
     {
@@ -17,91 +17,89 @@
     },
     {
       "tag": "sks",
-      "patterns": ["apa itu sks", "sks maksudnya apa", "1 sks berapa jam", "kepanjangan sks", "beban sks"],
+      "patterns": ["apa itu sks", "sks maksudnya apa", "1 sks berapa jam", "kepanjangan sks", "beban sks kuliah"],
       "responses": ["SKS adalah Satuan Kredit Semester. SKS menunjukkan bobot suatu mata kuliah. Semakin besar SKS-nya, semakin besar pula jam tatap muka atau beban beban kuliah per minggunya."]
     },
     {
       "tag": "ipk",
-      "patterns": ["apa bedanya ip dan ipk", "apa itu ipk", "cara hitung ipk", "indeks prestasi kumulatif", "ipk minimal"],
+      "patterns": ["apa bedanya ip dan ipk", "apa itu ipk", "cara hitung ipk", "indeks prestasi kumulatif", "ipk minimal kelulusan"],
       "responses": ["IP (Indeks Prestasi) adalah nilai rata-rata kamu dalam satu semester. Sedangkan IPK (Indeks Prestasi Kumulatif) adalah akumulasi total nilai rata-rata dari semester pertama hingga semester terakhir yang sudah kamu lalui."]
     },
     {
       "tag": "ukt",
-      "patterns": ["apa itu ukt", "ukt singkatan dari", "bayar ukt", "maksud ukt", "sistem ukt", "biaya kuliah ukt"],
+      "patterns": ["apa itu ukt", "ukt singkatan dari apa", "alur bayar ukt", "maksud sistem ukt", "biaya kuliah ukt"],
       "responses": ["UKT adalah Uang Kuliah Tunggal, yaitu sistem pembayaran biaya kuliah di mana mahasiswa membayar jumlah yang sama setiap semesternya tanpa ada biaya tambahan lagi untuk praktikum atau uang gedung."]
     },
     {
       "tag": "dosen_pembimbing",
-      "patterns": ["apa itu dpa", "dosen pembimbing akademik itu apa", "fungsi dpa", "dpa maksudnya", "dosbing itu apa", "dosen wali"],
-      "responses": ["Dosen Pembimbing Akademik (DPA) atau Dosen Wali adalah dosen yang bertugas membimbing, mengarahkan, dan menyetujui rencana studi (KRS) mahasiswa serta memantau perkembangan akademikmu selama kuliah."]
+      "patterns": ["apa itu dpa", "dosen pembimbing akademik itu apa", "fungsi dpa dosen wali", "dpa maksudnya", "dosbing itu apa", "apa tugas dosen wali"],
+      "responses": ["Dosen Pembimbing Academic (DPA) atau Dosen Wali adalah dosen yang bertugas membimbing, mengarahkan, dan menyetujui rencana studi (KRS) mahasiswa serta memantau perkembangan akademikmu selama kuliah."]
     },
     {
       "tag": "herregistrasi",
-      "patterns": ["apa itu herregistrasi", "daftar ulang semester", "maksud herregistrasi", "cara registrasi ulang", "her registrasi"],
+      "patterns": ["apa itu herregistrasi", "daftar ulang semester baru", "maksud herregistrasi", "cara registrasi ulang mahasiswa", "her registrasi kuliah"],
       "responses": ["Herregistrasi adalah proses pendaftaran ulang yang wajib dilakukan mahasiswa aktif setiap pergantian semester baru, biasanya berupa pembayaran UKT dan pengisian KRS agar status di sistem tetap aktif."]
     },
     {
       "tag": "cuti_kuliah",
-      "patterns": ["bagaimana cara cuti kuliah", "syarat cuti kuliah", "apa itu cuti akademik", "maksud cuti kuliah", "berhenti kuliah sementara"],
+      "patterns": ["bagaimana cara cuti kuliah", "syarat cuti kuliah", "apa itu cuti akademik", "maksud cuti kuliah", "prosedur berhenti kuliah sementara"],
       "responses": ["Cuti kuliah or cuti akademik adalah masa istirahat sah di mana mahasiswa tidak mengikuti kegiatan perkuliahan untuk semester tertentu dengan izin resmi dari kampus, sehingga statusnya tidak dianggap Drop Out (DO)."]
     },
     {
       "tag": "mbkm",
-      "patterns": ["apa itu mbkm", "kampus merdeka maksudnya apa", "program mbkm", "singkatan mbkm", "magang merdeka"],
+      "patterns": ["apa itu mbkm", "kampus merdeka maksudnya apa", "program mbkm kemendikbud", "singkatan mbkm", "magang studi independen merdeka"],
       "responses": ["MBKM adalah singkatan dari Merdeka Belajar Kampus Merdeka. Ini adalah program dari Kemendikbudristek yang memberikan hak kepada mahasiswa untuk belajar di luar program studi atau luar kampus selama 1-2 semester, seperti magang atau pertukaran pelajar."]
     },
     {
       "tag": "semester_antara",
-      "patterns": ["apa itu semester antara", "semester pendek itu apa", "sp kuliah", "fungsi semester pendek", "perbaikan nilai sp"],
+      "patterns": ["apa itu semester antara", "semester pendek itu apa", "sp kuliah semester antara", "fungsi semester pendek", "perbaikan nilai mata kuliah sp"],
       "responses": ["Semester Antara (dulu disebut Semester Pendek atau SP) adalah masa perkuliahan opsional yang diadakan di antara semester genap dan ganjil. Biasanya digunakan mahasiswa untuk mengulang mata kuliah yang nilainya kurang memuaskan atau mengambil mata kuliah atas demi lulus lebih cepat."]
     },
     {
       "tag": "matkul_prasyarat",
-      "patterns": ["apa itu mata kuliah prasyarat", "maksud matkul prasyarat", "syarat ambil matkul", "matkul bersyarat"],
+      "patterns": ["apa itu mata kuliah prasyarat", "maksud matkul prasyarat", "syarat ambil matkul lanjut", "matkul bersyarat tingkat lanjut"],
       "responses": ["Mata kuliah prasyarat adalah mata kuliah yang wajib kamu ambil atau lulus terlebih dahulu sebelum diperbolehkan mengambil mata kuliah tingkat lanjut berikutnya."]
     },
     {
       "tag": "skripsi",
-      "patterns": ["apa itu skripsi", "maksud tugas akhir", "ta itu apa", "penjelasan skripsi", "perbedaan ta dan skripsi"],
+      "patterns": ["apa itu skripsi", "maksud tugas akhir ta", "ta itu apa kuliah", "penjelasan skripsi tingkat akhir", "perbedaan ta dan skripsi"],
       "responses": ["Skripsi atau Tugas Akhir (TA) adalah karya ilmiah tertulis yang wajib disusun oleh mahasiswa tingkat akhir sebagai syarat utama untuk memperoleh gelar sarjana (S1)."]
     },
     {
       "tag": "plagiarisme_turnitin",
-      "patterns": ["apa itu turnitin", "cek plagiasi maksudnya", "uji turnitin itu apa", "batas maksimal turnitin", "plagiarisme kuliah"],
+      "patterns": ["apa itu turnitin", "cek plagiasi karya ilmiah maksudnya", "uji turnitin itu apa", "batas maksimal similarity turnitin", "plagiarisme dunia kuliah"],
       "responses": ["Turnitin adalah alat atau software pencocokan teks yang digunakan kampus untuk mengecek tingkat kesamaan (similiarity) karya ilmiah mahasiswa dengan sumber lain guna menghindari plagiarisme."]
     },
     {
       "tag": "yudisium",
-      "patterns": ["apa itu yudisium", "maksud dari yudisium", "kapan yudisium", "bedanya yudisium dan wisuda", "syarat yudisium"],
+      "patterns": ["apa itu yudisium", "maksud dari kelulusan yudisium", "kapan yudisium diadakan", "bedanya yudisium dan wisuda", "syarat mendaftar yudisium"],
       "responses": ["Yudisium adalah proses akademik yang menyatakan bahwa seorang mahasiswa telah resmi lulus dan berhak menyandang gelar sarjana setelah seluruh nilai dan administrasi terpenuhi. Yudisium dilakukan sebelum wisuda."]
     },
     {
       "tag": "wisuda",
-      "patterns": ["apa itu wisuda", "kapan wisuda dilaksanakan", "acara wisuda maksudnya", "pelepasan kelulusan"],
+      "patterns": ["apa itu wisuda", "kapan upacara wisuda dilaksanakan", "acara wisuda maksudnya", "pelepasan kelulusan seremoni"],
       "responses": ["Wisuda adalah upacara perayaan atau seremoni peneguhan tanda kelulusan bagi mahasiswa yang telah dinyatakan lulus pada proses yudisium sebelumnya."]
     },
     {
       "tag": "cumlaude",
-      "patterns": ["apa arti cumlaude", "syarat lulus cumlaude", "ipk cumlaude berapa", "maksud dengan pujian"],
+      "patterns": ["apa arti kelulusan cumlaude", "syarat lulus predikat cumlaude", "berapa standar ipk cumlaude", "maksud dengan pujian kelulusan"],
       "responses": ["Cumlaude adalah predikat kelulusan 'Dengan Pujian' yang diberikan kepada mahasiswa dengan IPK tinggi (biasanya di atas 3.51) dan berhasil lulus tepat waktu tanpa ada mata kuliah yang tidak lulus."]
     },
     {
       "tag": "kkn",
-      "patterns": ["apa itu kkn", "kuliah kerja nyata maksudnya", "ngapain aja pas kkn", "kkn singkatan dari"],
+      "patterns": ["apa itu kkn", "kuliah kerja nyata maksudnya", "ngapain saja pas kkn mahasiswa", "kkn singkatan dari apa"],
       "responses": ["KKN adalah Kuliah Kerja Nyata, yaitu program pengabdian kepada masyarakat di mana mahasiswa dari berbagai jurusan diterjunkan langsung ke desa atau daerah tertentu untuk membantu memecahkan masalah di sana."]
     },
     {
       "tag": "pkl",
-      "patterns": ["apa itu pkl", "internship itu apa", "magang kuliah maksudnya", "kerja praktek", "kp itu apa"],
+      "patterns": ["apa itu pkl magang", "internship mahasiswa itu apa", "magang kuliah maksudnya", "kerja praktek mahasiswa", "kp itu apa magang"],
       "responses": ["PKL (Praktik Kerja Lapangan) atau Kerja Praktik (KP) adalah program magang wajib di mana mahasiswa bekerja langsung di sebuah perusahaan atau instansi untuk mempraktikkan ilmu perkuliahan di dunia kerja nyata."]
     },
     {
       "tag": "unair_umum",
       "patterns": [
-        "unair",
-        "apa itu unair",
-        "universitas airlangga",
-        "tentang unair"
+        "apa sejarah profil universitas airlangga",
+        "tentang profil kampus unair"
       ],
       "responses": [
         "Universitas Airlangga (UNAIR) adalah salah satu perguruan tinggi negeri terkemuka di Indonesia yang terletak di Surabaya. Kampus ini memiliki motto 'Excellence with Morality'. Ada yang ingin kamu tanyakan spesifik mengenai UNAIR seperti jalur PMB, beasiswa, fakultas, atau lokasi kampusnya?"
@@ -111,21 +109,19 @@
       "tag": "unair_pmb_jalur",
       "patterns": [
         "apa saja jalur penerimaan mahasiswa baru yang dibuka oleh unair selain snbp dan snbt",
-        "jalur mandiri unair apa saja",
-        "pendaftaran unair selain snbp snbt",
-        "pmb unair"
+        "jalur mandiri penerimaan unair apa saja",
+        "pendaftaran mahasiswa baru unair selain seleksi nasional"
       ],
       "responses": [
-        "Selain SNBP dan SNBT, Universitas Airlangga (UNAIR) membuka Jalur Mandiri yang terdiri dari beberapa jenis, antara lain: Mandiri Prestasi, Mandiri Utbk Plus (menggunakan nilai UTBK-SNBT), Mandiri Reguler (Ujian Tulis), dan seleksi khusus Kelas Internasional (IUP)."
+        "Selain SNBP and SNBT, Universitas Airlangga (UNAIR) membuka Jalur Mandiri yang terdiri dari beberapa jenis, antara lain: Mandiri Prestasi, Mandiri Utbk Plus (menggunakan nilai UTBK-SNBT), Mandiri Reguler (Ujian Tulis), dan seleksi khusus Kelas Internasional (IUP)."
       ]
     },
     {
       "tag": "unair_pmb_skor",
       "patterns": [
-        "berapa rata-rata nilai rapor atau skor utbk yang aman untuk masuk ke program studi x di unair",
-        "nilai aman masuk unair",
-        "skor utbk masuk jurusan unair",
-        "berapa nilai rapor untuk lolos unair"
+        "berapa rata-rata nilai rapor atau skor utbk yang aman untuk masuk ke program studi di unair",
+        "skor utbk masuk jurusan favorit unair",
+        "berapa nilai rapor kelolosan SNMPTN SNBP unair"
       ],
       "responses": [
         "Nilai aman rapor atau skor UTBK bervariasi setiap tahun tergantung keketatan program studi (prodi). Prodi rumpun kesehatan seperti Kedokteran dan Farmasi, serta rumpun soshum seperti Manajemen dan Hukum biasanya membutuhkan skor yang sangat tinggi. Anda dapat memantau daya tampung dan keketatan resmi di situs PPMB UNAIR."
@@ -135,9 +131,8 @@
       "tag": "unair_pmb_iup",
       "patterns": [
         "apa saja persyaratan dan tahapan tes untuk mendaftar kelas internasional iup di unair",
-        "cara daftar kelas internasional unair",
-        "syarat iup unair",
-        "tes iup unair apa saja"
+        "cara daftar kelas internasional iup unair",
+        "persyaratan tes internasional iup unair"
       ],
       "responses": [
         "Persyaratan utama Kelas Internasional (IUP) UNAIR meliputi sertifikat kemampuan bahasa Inggris (seperti TOEFL/IELTS) dan nilai rapor/ijazah. Tahapan tesnya biasanya terdiri dari tes kemampuan akademik (Airlangga Academic Test) serta wawancara kelayakan (Interview Test) dalam bahasa Inggris."
@@ -146,10 +141,9 @@
     {
       "tag": "unair_jumlah_fakultas",
       "patterns": [
-        "berapa jumlah fakultas di unair",
-        "ada berapa fakultas di unair",
-        "daftar fakultas unair",
-        "unair punya berapa fakultas"
+        "berapa total jumlah fakultas di unair",
+        "ada berapa banyak fakultas di universitas airlangga",
+        "daftar nama fakultas unair surabaya"
       ],
       "responses": [
         "Universitas Airlangga (UNAIR) saat ini memiliki **15 Fakultas, 1 Sekolah Pascasarjana, dan 1 Sekolah Ilmu Kesehatan dan Ilmu Alam (SIKIA) Banyuwangi**. Fakultas tersebut tersebar di Kampus A, B, dan C yang menaungi rumpun Kesehatan, Sains-Teknologi, serta Sosial Humaniora."
@@ -159,9 +153,8 @@
       "tag": "unair_prodi_unggulan",
       "patterns": [
         "apa program studi unggulan yang paling banyak diminati di unair",
-        "jurusan favorit di unair",
-        "prodi paling ketat unair",
-        "jurusan unggulan unair"
+        "jurusan favorit ketat di unair",
+        "prodi paling banyak pendaftar unair"
       ],
       "responses": [
         "Program studi unggulan dan paling diminati di UNAIR antara lain Kedokteran, Kedokteran Gigi, Farmasi, dan Keperawatan untuk rumpun Saintek. Sedangkan untuk rumpun Soshum meliputi Psikologi, Hukum, Manajemen, Akuntansi, dan Ilmu Komunikasi."
@@ -171,9 +164,8 @@
       "tag": "beasiswa",
       "patterns": [
         "apakah ada program kip kuliah atau beasiswa lain untuk mahasiswa unair",
-        "beasiswa di unair apa saja",
-        "cara daftar kip kuliah unair",
-        "beasiswa unair"
+        "informasi penawaran beasiswa di unair apa saja",
+        "cara daftar kip kuliah mahasiswa unair"
       ],
       "responses": [
         "Ya, UNAIR menyediakan kuota untuk program KIP Kuliah (KIP-K). Selain itu, terdapat berbagai beasiswa lain seperti Beasiswa Bank Indonesia, Beasiswa Djarum Beasiswa Plus, Beasiswa Kaltim Cemerlang, Beasiswa dari Pemkot Surabaya, serta bantuan internal UKT dari pihak universitas."
@@ -183,9 +175,8 @@
       "tag": "unair_biaya_ukt",
       "patterns": [
         "bagaimana sistem pembayaran uang kuliah tunggal ukt di unair dan apakah bisa dicicil",
-        "apakah ukt unair bisa dicicil",
-        "sistem pembayaran ukt unair",
-        "cicilan ukt unair"
+        "apakah pengajuan ukt unair bisa dicicil mengangsur",
+        "prosedur skema cicilan ukt semester unair"
       ],
       "responses": [
         "Sistem UKT di UNAIR disesuaikan dengan kemampuan ekonomi orang tua wali mahasiswa yang dibagi menjadi beberapa kelompok (golongan). Bagi mahasiswa yang mengalami kendala finansial, UNAIR menyediakan kebijakan pengajuan keringanan, penundaan, atau pembayaran UKT secara mengangsur (dicicil) sesuai ketentuan rektorat."
@@ -195,9 +186,8 @@
       "tag": "unair_kehidupan_asrama",
       "patterns": [
         "bagaimana fasilitas asrama mahasiswa student housing yang disediakan oleh pihak kampus",
-        "asrama unair",
-        "student housing unair",
-        "fasilitas asrama unair"
+        "lokasi asrama putra putri unair",
+        "fasilitas lingkungan student housing unair"
       ],
       "responses": [
         "UNAIR menyediakan fasilitas Asrama Mahasiswa (Student Housing), seperti Asrama Putri di Kampus C dan Asrama Putra. Fasilitasnya cukup lengkap meliputi kamar tidur (sharing), kamar mandi, koneksi Wi-Fi, ruang belajar bersama, kantin, keamanan 24 jam, dan dekat dengan area perkuliahan."
@@ -207,9 +197,8 @@
       "tag": "unair_kehidupan_ukm",
       "patterns": [
         "apa saja unit kegiatan mahasiswa ukm populer yang bisa diikuti untuk mengembangkan minat dan bakat",
-        "ukm di unair",
-        "organisasi mahasiswa unair",
-        "ukm populer unair"
+        "pilihan organisasi ukm di unair",
+        "ukm kesenian olahraga populer unair"
       ],
       "responses": [
         "UNAIR memiliki banyak UKM populer di berbagai bidang, seperti Bidang Khusus (Resimen Mahasiswa, Pramuka, KSR-PMI), Bidang Olahraga (Sepak Bola, Basket, Panahan, Badminton), Bidang Seni (Paduan Suara PSM, Tari, Teater), dan Bidang Kerohanian (UK3, UKM Kerohanian Islam)."
@@ -218,10 +207,10 @@
     {
       "tag": "unair_lokasi_kampus",
       "patterns": [
-        "dimana saja lokasi kampus unair",
-        "perbedaan kampus a b dan c unair",
-        "fakultas di kampus a apa saja",
-        "lokasi gedung rektorat unair"
+        "dimana saja pembagian lokasi kampus unair",
+        "apa perbedaan cakupan kampus a b dan c unair",
+        "fakultas apa saja yang ada di kampus a unair",
+        "dimana lokasi letak gedung rektorat unair"
       ],
       "responses": [
         "UNAIR memiliki 3 kampus utama di Surabaya: \n- **Kampus A** (Jl. Mayjen Prof. Dr. Moestopo) untuk rumpun kesehatan (Fakultas Kedokteran dan Kedokteran Gigi).\n- **Kampus B** (Jl. Airlangga) untuk rumpun Soshum (FEB, FH, FISIP, FIB, Psikologi, Vokasi).\n- **Kampus C** (Mulyorejo) sebagai pusat Rektorat dan rumpun Sains, Teknologi, serta rumpun kesehatan lainnya (FST, FTMM, Farmasi, Keperawatan, Kesehatan Masyarakat, Kedokteran Hewan, Perikanan dan Kelautan)."
@@ -230,10 +219,9 @@
     {
       "tag": "unair_cyber_campus",
       "patterns": [
-        "apa itu cyber campus unair",
-        "web uacc unair",
-        "fungsi cyber campus",
-        "cara isi krs di unair"
+        "apa itu portal cyber campus unair",
+        "akses login web uacc unair",
+        "apa fungsi utama dari website cyber campus"
       ],
       "responses": [
         "Cyber Campus Universitas Airlangga (UACC) adalah portal sistem informasi akademik digital terintegrasi utama bagi mahasiswa UNAIR. Portal ini digunakan untuk pengisian KRS secara online, melihat nilai KHS, mengecek riwayat pembayaran UKT, transkrip akademik, hingga pendaftaran herregistrasi."
@@ -242,10 +230,9 @@
     {
       "tag": "unair_elita",
       "patterns": [
-        "apa itu elita unair",
-        "e-learning universitas airlangga",
-        "platform kuliah online unair",
-        "web elearning unair"
+        "apa itu web elita unair",
+        "e-learning sistem pembelajaran universitas airlangga",
+        "platform perkuliahan kuliah online unair"
       ],
       "responses": [
         "ELITA (E-Learning Universitas Airlangga) adalah platform manajemen pembelajaran digital resmi yang digunakan di UNAIR. Mahasiswa memanfaatkan ELITA untuk mengakses materi perkuliahan, mengumpulkan tugas harian, mengikuti kuis interaktif, presensi kelas, dan berinteraksi secara online dengan dosen."
@@ -254,10 +241,10 @@
     {
       "tag": "unair_amerta",
       "patterns": [
-        "apa itu amerta unair",
-        "ospek unair namanya apa",
-        "pengenalan kampus mahasiswa baru unair",
-        "ksatria airlangga"
+        "apa itu amerta kegiatan unair",
+        "ospek universitas unair namanya apa",
+        "pengenalan kehidupan kampus bagi mahasiswa baru unair",
+        "apa sebutan ksatria airlangga"
       ],
       "responses": [
         "AMERTA (Angkatan Muda Ksatria Airlangga) adalah nama resmi rangkaian kegiatan pengenalan kehidupan kampus bagi mahasiswa baru (ospek) di tingkat Universitas Airlangga. Istilah 'Ksatria Airlangga' sendiri merupakan sebutan bangga untuk mahasiswa UNAIR."

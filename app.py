@@ -9,44 +9,43 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
 
-# 1. Inisialisasi Sastrawi secara Global
+# 1. Inisialisasi Sastrawi untuk Preprocessing Bahasa Indonesia
 stemmer_factory = StemmerFactory()
 stemmer = stemmer_factory.create_stemmer()
 
 stopword_factory = StopWordRemoverFactory()
-stopword_remover = stopword_factory.create_stop_word_remover()
+stopword_remover = stopword_factory.create_stop_word_remover() 
 
 # 2. Load Dataset Intents
 with open('intents.json', 'r', encoding='utf-8') as file:
     intents_data = json.load(file)
 
-# 3. Ekstraksi data latih (Gunakan text asli untuk menghindari timeout Vercel)
+# 3. Ekstraksi data untuk training TF-IDF
 training_patterns = []
-pattern_to_intent = []
+pattern_to_intent = []  
 
 for intent in intents_data['intents']:
     for pattern in intent['patterns']:
-        # Mengubah ke lowercase dan membersihkan tanda baca ringan saja (sangat cepat)
-        clean_pattern = pattern.lower().strip()
-        clean_pattern = re.sub(r'[^\w\s]', '', clean_pattern)
-        training_patterns.append(clean_pattern)
+        training_patterns.append(pattern)
         pattern_to_intent.append(intent)
 
-# 4. Fungsi Preprocessing khusus untuk Input User saja
-def preprocess_user_input(text):
+# 4. Fungsi Preprocessing (Case Folding, Cleaning, Stopword, Stemming)
+def preprocess_text(text):
     text = text.lower()
     text = re.sub(r'[^\w\s]', '', text)
     text = stopword_remover.remove(text)
     text = stemmer.stem(text)
     return text
 
-# 5. Vektorisasi menggunakan TF-IDF langsung dari text pola asli
+# Preprocessing semua data latih di awal
+preprocessed_patterns = [preprocess_text(pattern) for pattern in training_patterns]
+
+# 5. Vektorisasi menggunakan TF-IDF
 vectorizer = TfidfVectorizer()
-tfidf_matrix = vectorizer.fit_transform(training_patterns)
+tfidf_matrix = vectorizer.fit_transform(preprocessed_patterns)
 
 def chatbot_response(user_input):
-    # Lakukan preprocessing Sastrawi secara real-time hanya pada 1 kalimat user ini
-    cleaned_input = preprocess_user_input(user_input)
+    cleaned_input = preprocess_text(user_input)
     if not cleaned_input.strip():
         return "Maaf, bisa tolong ketikkan pertanyaan yang lebih jelas?"
 
@@ -58,12 +57,12 @@ def chatbot_response(user_input):
     best_match_idx = similarity.argmax()
     score = similarity[0][best_match_idx]
 
-    # Batas ambang kecocokan (Threshold)
-    if score > 0.15: # Menurunkan sedikit threshold karena data latih tidak di-stemming penuh
+    # Batas ambang kecocokan ditingkatkan menjadi 0.40 agar tidak salah jawab
+    if score > 0.40:
         matched_intent = pattern_to_intent[best_match_idx]
         return random.choice(matched_intent['responses'])
     else:
-        return "Maaf, saya belum memahami pertanyaan tersebut. Coba tanyakan istilah lain seputar kampus UNAIR seperti Jalur PMB, ELPT, Cyber Campus, atau KRS."
+        return "Maaf, saya belum memahami pertanyaan tersebut dengan jelas. Coba tanyakan dengan kata kunci yang lebih spesifik (contoh: 'jalur mandiri Unair', 'apa itu KRS', atau 'syarat beasiswa')."
 
 @app.route('/')
 def home():
@@ -75,8 +74,11 @@ def chat():
     response = chatbot_response(message)
     return jsonify({'response': response})
 
-# Handler port dinamis
+@app.route('/dashboard')
+def dashboard():
+    total_tags = len(intents_data['intents'])
+    total_patterns = sum(len(intent['patterns']) for intent in intents_data['intents'])
+    return render_template('dashboard.html', intents=intents_data['intents'], total_tags=total_tags, total_patterns=total_patterns)
+
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True)
